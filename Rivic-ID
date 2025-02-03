@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary Meta Tags -->
+    <title>RIVIC ID - The Future of Digital Identity</title>
+    <meta name="title" content="RIVIC ID - The Future of Digital Identity">
+    <meta name="description" content="RIVIC ID - Advanced quantum-safe digital identity solution. Made in Germany, Make in Bharat.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rivic.id">
+    <meta property="og:title" content="RIVIC ID - The Future of Digital Identity">
+    <meta property="og:description" content="RIVIC ID - Advanced quantum-safe digital identity solution. Made in Germany, Make in Bharat.">
+    <meta property="og:image" content="https://rivic.id/images/social-preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://rivic.id">
+    <meta name="twitter:title" content="RIVIC ID - The Future of Digital Identity">
+    <meta name="twitter:description" content="RIVIC ID - Advanced quantum-safe digital identity solution. Made in Germany, Make in Bharat.">
+    <meta name="twitter:image" content="https://rivic.id/images/social-preview.png">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-sans);
+            background-color: #000;
+            color: #fff;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Initial loading state */
+        .loading {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+
+    <!-- App CSS -->
+    <link href="/styles/tailwind.css" rel="stylesheet">
+</head>
+<body>
+    <noscript>
+        <div style="padding: 20px; text-align: center;">
+            <h1>JavaScript Required</h1>
+            <p>Please enable JavaScript to access RIVIC ID. We require JavaScript to provide a secure and interactive experience.</p>
+        </div>
+    </noscript>
+
+    <div id="root">
+        <div class="loading">
+            <div class="loading-content">
+                <img src="/images/logo.svg" alt="RIVIC ID" class="loading-logo" width="80" height="80">
+                <p>Loading RIVIC ID...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- App -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Analytics -->
+    <script async defer data-website-id="your-analytics-id" src="https://analytics.rivic.id/script.js"></script>
+
+    <!-- Error handling -->
+    <script>
+        window.addEventListener('error', function(event) {
+            if (event.error && event.error.isHandled) return;
+
+            const root = document.getElementById('root');
+            if (!root) return;
+
+            root.innerHTML = `
+                <div style="padding: 20px; text-align: center;">
+                    <h1>Something went wrong</h1>
+                    <p>We apologize for the inconvenience. Please try refreshing the page.</p>
+                    <button onclick="window.location.reload()" style="
+                        background: #6366f1;
+                        color: white;
+                        border: 0;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    ">
+                        Refresh Page
+                    </button>
+                </div>
+            `;
+
+            if (event.error) event.error.isHandled = true;
+        });
+    </script>
+</body>
+</html>
